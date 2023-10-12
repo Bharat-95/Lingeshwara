@@ -75,7 +75,7 @@ const contact = () => {
               <textarea
                 type="text"
                 name="message"
-                className="lg:h-10 md:lg:h-10 lg:w-96 md:w-96 w-52 h-5 p-4"
+                className="lg:h-10 md:lg:h-10 lg:w-96 md:w-96 w-52 h-5 p-2 text-black"
               ></textarea>
             </div>
             <div className=" text-center">
