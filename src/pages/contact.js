@@ -38,17 +38,17 @@ const contact = () => {
   return (
     <div className="">
       <Header />
-      <div className="space-y-6   mt-20 ">
+      <div className="space-y-6 mt-20 ">
         <div className="text-center text-xl ">We would love to hear from you</div>
        
-        <div className=" flex  lg:justify-center md:justify-center ml-10 ">
+        <div className=" flex  justify-center ">
          
           <form className="space-y-6  " ref={form} onSubmit={sendEmail}>
             <div className="">
-              <div className="text-3xl font-thin ">Full Name:</div>
+              <div className="text-xl font-thin ">Full Name:</div>
               <input
                 type="text" name="user_name"
-                className="h-10 w-96 p-4 text-black"
+                className="hlg:h-10 md:lg:h-10 lg:w-96 md:w-96 w-52 h-5 p-4"
               ></input>
             </div>
             <div>
@@ -57,7 +57,7 @@ const contact = () => {
               <input
                type="email" name="user_email"
                 placeholder="Email address"
-                className="h-10 w-96 p-4 text-black"
+                className="lg:h-10 md:lg:h-10 lg:w-96 md:w-96 w-52 h-5 p-4 text-black"
               ></input>
             </div>
             <div>
@@ -66,7 +66,7 @@ const contact = () => {
               <input
                 placeholder="Phone Number"
                 name="phone_number"
-                className="h-10 w-96 p-4 text-black"
+                className="lg:h-10 md:lg:h-10 lg:w-96 md:w-96 w-52 h-5 p-4"
               ></input>
             </div>
             <div>
@@ -75,7 +75,7 @@ const contact = () => {
               <textarea
                 type="text"
                 name="message"
-                className="h-10 w-96 p-2 text-black"
+                className="lg:h-10 md:lg:h-10 lg:w-96 md:w-96 w-52 h-5 p-4"
               ></textarea>
             </div>
             <div className=" text-center">
