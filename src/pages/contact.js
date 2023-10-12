@@ -37,7 +37,7 @@ const contact = () => {
 
 
   return (
-    <div className="">
+    <div>
       <Header />
       <div className="space-y-6 mt-20 ">
         <div className="text-center text-xl ">We would love to hear from you</div>
@@ -96,7 +96,7 @@ const contact = () => {
        
     
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
