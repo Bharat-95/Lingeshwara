@@ -1,6 +1,7 @@
 import React from "react";
 import "../app/globals.css";
 import Header from "./header";
+import Footer from './footer'
 import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import {BsWhatsapp} from 'react-icons/bs'
@@ -95,6 +96,7 @@ const contact = () => {
        
     
       </div>
+      <Footer/>
     </div>
   );
 };
