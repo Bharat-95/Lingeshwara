@@ -3,7 +3,7 @@ import "../app/globals.css";
 import Image from "next/image";
 import Header from '../pages/header'
 import Footer from '../pages/footer'
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
 
 
 const about = () => {
