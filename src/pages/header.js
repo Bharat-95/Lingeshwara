@@ -21,13 +21,13 @@ const Header = () => {
           <li className="hover:text-gray-400 lg:text-lg md:text-sm text-[10px] cursor-pointer" onClick={handleCategoriesClick}>Categories</li>
           {categoriesVisible && (
             <ul className="absolute bg-gradient-to-b from-gray-600 to-gray-300 lg:w-52 md:w-36 lg:h-64 md:h-48 lg:p-6 md:p-3 p-2 md:text-md text-sm lg:text-lg lg:m-10 md:m-8 m-4 lg:leading-8 md:leading-6 text-blue-950  rounded-xl">
-              <Link href="" className="hover:text-white"><li>Hall Tiles</li></Link>
-              <Link href="" className="hover:text-white"><li>Kitchen Tiles</li></Link>
-              <Link href="" className="hover:text-white"><li>Bedroom Tiles</li></Link>
-              <Link href="" className="hover:text-white"><li>Elevation Tiles</li></Link>
-              <Link href="" className="hover:text-white"><li>Pooja Tiles</li></Link>
-              <Link href="" className="hover:text-white"><li>Bathroom Tiles</li></Link>
-              <Link href="" className="hover:text-white"><li>Parking Tiles</li></Link>
+              <Link href="/hall" className="hover:text-white"><li>Hall Tiles</li></Link>
+              <Link href="/kitchen" className="hover:text-white"><li>Kitchen Tiles</li></Link>
+              <Link href="/bedroom" className="hover:text-white"><li>Bedroom Tiles</li></Link>
+              <Link href="/elevation" className="hover:text-white"><li>Elevation Tiles</li></Link>
+              <Link href="/pooja" className="hover:text-white"><li>Pooja Tiles</li></Link>
+              <Link href="/bathroom" className="hover:text-white"><li>Bathroom Tiles</li></Link>
+              <Link href="/parking" className="hover:text-white"><li>Parking Tiles</li></Link>
             </ul>
           )}
           <Link href="/about" className="hover:text-gray-400 lg:text-lg md:text-sm text-[10px]"><li>About</li></Link>
