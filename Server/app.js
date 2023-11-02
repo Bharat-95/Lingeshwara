@@ -1,38 +1,56 @@
 const express = require('express')
 const app = express()
 const port = 4000
-const bodyParser = require('body-parser')
-const mysql = require('mysql')
-var cors = require('cors');
+const cors = require('cors');
+const {MongoClient} = require('mongodb');
 
 
-const db = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"Tillu0201",
-    database:"Lingeswara",
-})
+app.use(express.json());
+app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send("Backen server")
-})
+const url = 'mongodb+srv://tillu0201:Tillu0201@bharat.e7hqicd.mongodb.net/';
+const client = new MongoClient(url);
 
 
-app.get('/products', (req, res) => {
-    const q = "SELECT * FROM products"
-    db.query(q, (error, data) => {
-      if (error) {
-        res.status(500).json({ error: "Internal Server Error" });
-    } else {
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-        res.setHeader('Access-Control-Allow-Methods', 'GET');
+async function run() {
+
+  try {
+
+    await client.connect()
+
+        const db = client.db('Lingeshwara');
+        const collection = db.collection('Hall');
+        
+
+    app.get('/', (req, res) => {
+      res.send("Backend server")
+    })
+    
+    app.get('/hall',async (req, res) =>{
+
+      try {
+        
+        const data = await collection.find({}).toArray()
+
         res.json(data);
+        
+      } catch (error) {
+        console.error('Unable to fetch data', error);
+        res.status(202).send('Unable to fetch data from Mongodb');
       }
-    });
-  })
+    } )
 
- 
+     
+    
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`)
+    })
+    
+    
+  } catch (error) {
+    console.error('Unable to connect to database', error);
+    res.status(201).send('Unable to connect to Mongodb');
+  }
+}
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+run();

@@ -6,17 +6,25 @@ const hall = () => {
 
     const [data, setData] = useState(null);
 
-    useEffect(() => {
-      
-     fetch('http://localhost:4000/products')
-        .then((response) => response.json())
-        .then((data) => {
-          setData(data);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-        });
-    }, []);
+   useEffect (() => {
+
+    const fetchData = async () => {
+try {
+  
+const response = await fetch('http://localhost:4000/hall')
+const data = await response.json();
+
+setData(data);
+
+} catch (error) {
+  
+  console.error('Unable to fetch data', error);
+}
+
+    }
+
+fetchData();
+   } ,[]); 
   
     if (data) {
       
@@ -25,10 +33,10 @@ const hall = () => {
         <div className='text-2xl '>Products</div>
         <div>
         <ul className='grid grid-cols-2 grid-rows-2 gap-x-10 gap-y-10 mx-10 my-10 '>
-          {data.map((item) => (
-            <li key={item.Id} >
-              <h2>{item.Title}</h2>
-              <p>Price: {item.Price}</p>
+          {data.map((Hall) => (
+            <li key={Hall._Id} >
+              <h2>{Hall.Title}</h2>
+              <p>Price: {Hall.Price}</p>
             </li>
           ))}
         </ul>
